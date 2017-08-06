@@ -1,0 +1,47 @@
+{
+  "name": "date-calculator",
+  "version": "1.0.0",
+  "description": "use webpack , antDesign , momentsjs build date calculator single page application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "export NODE_ENV=dev&&webpack-dev-server --config ./webpack/webpack.index.js --colors --hot",
+    "build": "export NODE_ENV=production&&webpack --config ./webpack/webpack.index.js --profile --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lincmin/date-calculator.git"
+  },
+  "keywords": [
+    "date",
+    "calculator",
+    "momentsjs",
+    "antDesign"
+  ],
+  "author": "lincmin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lincmin/date-calculator/issues"
+  },
+  "homepage": "https://github.com/lincmin/date-calculator#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-import": "^1.3.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "antd": "^2.12.3",
+    "moment": "^2.18.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
