@@ -19,6 +19,7 @@ class DateCalculator extends Component {
             reckonDay: 0,
             reckonDate: moment(),
             reckonResult: moment().format(dateFormat),
+            weekNum:0,//周数
         };
     }
 
@@ -27,6 +28,11 @@ class DateCalculator extends Component {
         let apart;
         apart = date[1].diff(date[0], 'days');
         this.setState({ apartDay: apart });
+    }
+    changeWeeks(date, dateString) {
+        let weekNum;
+        weekNum = moment(dateString).weeks()
+        this.setState({ weekNum: weekNum });
     }
     changeReckonType(ev) {
         let type = ev.target.value;
@@ -98,6 +104,16 @@ class DateCalculator extends Component {
                                             </FormItem>
                                         </Form>
                                         <div style={{ textAlign: 'center', marginTop: 10 }} > 相隔天数<span style={{ backgroundColor: '#87d068', display: 'inline-block', minWidth: 30, textAlign: 'center', padding: 6, margin: '0 10px', borderRadius: 15, color: 'white' }} >{this.state.apartDay}</span></div>
+                                    </Card>
+                                </Col>
+                                <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }}>
+                                    <Card title="计算周数" bordered={false}>
+                                        <Form layout="inline" style={{ textAlign: 'center', marginTop: 10 }}>
+                                            <FormItem>
+                                                <DatePicker onChange={this.changeWeeks.bind(this)} />
+                                            </FormItem>
+                                        </Form>
+                                        <div style={{ textAlign: 'center', marginTop: 10 }} > 当年周数<span style={{ backgroundColor: '#87d068', display: 'inline-block', minWidth: 30, textAlign: 'center', padding: 6, margin: '0 10px', borderRadius: 15, color: 'white' }} >{this.state.weekNum}</span></div>
                                     </Card>
                                 </Col>
                                 <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }}>
